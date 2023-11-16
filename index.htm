@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALCULATOR</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body> 
+   
+    <div class="call-box">
+        <div class="input-field">
+            <input class="screen" type="tel" id="result">
+        </div>
+        <ul class="keyword">
+            <button class="keys" onclick="appendToScreen('7')"> <li class="input-button">7</li> </button>
+            <button class="keys" onclick="appendToScreen('8')"> <li class="input-button">8</li> </button>
+            <button class="keys" onclick="appendToScreen('9')"> <li class="input-button">9</li> </button>
+            <button class="keys" onclick="clearScreen()">       <li class="clear-button">C</li> </button>
+            <button class="keys" onclick="appendToScreen('4')"> <li class="input-button">4</li> </button>
+            <button class="keys" onclick="appendToScreen('5')"> <li class="input-button">5</li> </button>
+            <button class="keys" onclick="appendToScreen('6')"> <li class="input-button">6</li> </button>
+            <button  class="keys"onclick="appendToScreen('*')"> <li class="input-button">*</li> </button>
+            <button class="keys" onclick="appendToScreen('1')"> <li class="input-button">1</li> </button>
+            <button  class="keys"onclick="appendToScreen('2')"> <li class="input-button">2</li> </button>
+            <button class="keys" onclick="appendToScreen('3')"> <li class="input-button">3</li> </button>
+            <button class="keys" onclick="appendToScreen('-')"> <li class="input-button">-</li> </button>
+            <button class="keys" onclick="appendToScreen('0')"> <li class="input-button">0</li> </button>
+            <button class="keys"  onclick="calculate()">        <li class="input-button">=</li> </button>
+            <button class="keys" onclick="appendToScreen('/')"> <li class="input-button">/</li> </button>
+            <button class="keys" onclick="appendToScreen('+')"> <li class="input-button">+</li> </button>
+        </ul>
+    </div>
+    <script>
+        function appendToScreen(value) {
+            document.getElementById('result').value += value;
+        }
+
+        function calculate() {
+            var result = document.getElementById('result');
+            result.value = eval(result.value);
+        }
+
+        function clearScreen() {
+            document.getElementById('result').value = '';
+        }
+    </script>
+</body>
+</html>
